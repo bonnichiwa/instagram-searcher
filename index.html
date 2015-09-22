@@ -11,11 +11,22 @@
   <script src="js/app.js"></script>
 
 </head>
-<body>
+<body ng-controller="instaCtrl">
   <header>
     <img src="img/ng-instagram.png" />
   </header>
-    <input type="text" id="tagSearch" value="Enter a tag to search" />
-    <input type="submit" id="submit" value="Submit" />
+
+  <div class="search-bar">
+    <form ng-submit="searchItem(tag)">
+      <input type="text" id="tagSearch" name="tag" ng-model="tag" placeholder="Enter a tag to search" required />
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+  </div>
+
+  <div class="search-results">
+    <ul ng-repeat="result in results">
+      <li> {{result}} </li>
+    </ul>
+  </div>
 </body>
 </html>
