@@ -25,8 +25,12 @@
 
   <div class="search-results">
     <p ng-if="tagResults">Founded {{results.length}} results for <em>"{{tag}}"</em></p>
-    <div ng-if="imageResults" ng-repeat="result in results">
-      <img ng-src="{{ result.images.low_resolution.url }}" />
+    <div id="box" ng-if="imageResults" ng-repeat="result in results">
+      <a href="{{result.link}}" target="_blank">
+        <img ng-src="{{ result.images.low_resolution.url }}" />
+      </a>
+      <p>{{result.user.username}}</p>
+      <hr>
     </div>
   </div>
 </body>

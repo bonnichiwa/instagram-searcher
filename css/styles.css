@@ -1,11 +1,31 @@
 body {
   padding-top: 5em;
+  padding-bottom: 5em;
   text-align: center;
 }
 
+p {
+  color: gray;
+}
+
+hr {
+  color: lightgray;
+}
+
+#box {
+  padding: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: 1px dashed lightgray;
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ngAnimate */
 .ng-enter, .ng-enter-active {
-  -webkit-transition: opacity ease-in 0.5s;
-  transition:opacity ease-in 0.5s;
+  -webkit-transition: opacity ease-in 1s;
+  transition:opacity ease-in 1s;
 }
 
 .ng-enter {
@@ -13,8 +33,8 @@ body {
 }
 
 .ng-enter-stagger {
-  -webkit-transition-delay: 0.1s;
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
 }
 
 .ng-enter-active {
