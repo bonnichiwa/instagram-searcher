@@ -22,11 +22,15 @@
     <form name="tagForm" ng-submit="searchItem(tag)" novalidate>
       <input type="text" id="tagSearch" name="tag" ng-model="tag" ng-model-options="{updateOn: 'submit'}" placeholder="Enter a tag to search" ng-minlength="1" required="" />
       <input type="submit" id="submit" value="Submit"/>
+        <div ng-if="tagForm.$submitted && tagForm.$invalid" ng-messages="tagForm.tag.$error">
+          <p ng-message="minlength">A tag is required.</p>
+          <p ng-message="required">A tag is required.</p>
+        </div>
     </form>
   </div>
 
-    <div class="search-results">
-      <p ng-if="tagForm.$submitted && tagForm.$valid && searchComplete">{{results.length}} most recent results for <span ng-if="tagForm.$submitted && searchComplete"><em>"{{tag}}":</em></span></p>
+    <div class="search-results" ng-if="tagForm.$submitted && tagForm.$valid && searchComplete">
+      <p>{{results.length}} most recent results for <span ng-if="tagForm.$submitted && searchComplete"><em>"{{tag}}":</em></span></p>
       <div id="box" ng-show="searchComplete" ng-repeat="result in results">
         <a href="{{result.link}}" target="_blank">
           <img ng-src="{{ result.images.low_resolution.url }}" />
