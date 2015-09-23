@@ -1,7 +1,9 @@
-angular.module('instaApp', [])
+angular.module('instaApp', ['ngAnimate'])
+
   .controller('instaCtrl', function($scope, $http) {
 
   var tagResults = false;
+  var imageResults = false;
 
   $scope.searchItem = function(tag) {
     var url = "https://api.instagram.com/v1/tags/{tag-name}/media/recent";
