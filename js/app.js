@@ -17,7 +17,7 @@ angular.module('instaApp', [])
       params: request
     })
     .then(function(response) {
-      $scope.results = response.data;
+      $scope.results = response.data.data;
       console.log(response.data);
     },
     function(result) {

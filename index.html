@@ -24,12 +24,10 @@
   </div>
 
   <div class="search-results">
-    <p ng-if="tagResults">Amount of results: {{results.data.length}} for <em>"{{tag}}"</em></p>
-    <ul>
-      <li >
-        <img ng-src="{{ results.data[0].images.standard_resolution.url }}" />
-      </li>
-    </ul>
+    <p ng-if="tagResults">Amount of results: {{results.length}} for <em>"{{tag}}"</em></p>
+    <div ng-repeat="result in results">
+        <img ng-src="{{ result.images.low_resolution.url }}" />
+    </div>
   </div>
 </body>
 </html>
