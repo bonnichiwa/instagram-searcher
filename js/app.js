@@ -1,11 +1,14 @@
-angular.module('instaApp', ['ngAnimate'])
+angular.module('instaApp', ['ngAnimate', 'ngMessages'])
 
   .controller('instaCtrl', function($scope, $http) {
 
-  var tagResults = false;
-  var imageResults = false;
+  $scope.tagResults = false;
+  $scope.imageResults = false;
 
   $scope.searchItem = function(tag) {
+    $scope.tagResults = true;
+    $scope.imageResults = true;
+    
     var url = "https://api.instagram.com/v1/tags/{tag-name}/media/recent";
     var request = {
       client_id: "f716627148d7477890ca3e35d2ce5d26",
@@ -22,7 +25,7 @@ angular.module('instaApp', ['ngAnimate'])
       $scope.results = response.data.data;
       console.log(response.data);
     },
-    function(result) {
+    function(error) {
       alert('error');
     });
   };
