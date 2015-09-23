@@ -31,12 +31,12 @@
 
     <div class="search-results" ng-if="tagForm.$submitted && tagForm.$valid && searchComplete">
       <p>{{results.length}} most recent results for <span ng-if="tagForm.$submitted && searchComplete"><em>"{{tag}}":</em></span></p>
-      <div id="box" ng-show="searchComplete" ng-repeat="result in results">
+      <div class="box" ng-show="searchComplete" ng-repeat="result in results">
         <a href="{{result.link}}" target="_blank">
-          <img ng-src="{{ result.images.low_resolution.url }}" />
+          <img class="result-img" ng-src="{{ result.images.low_resolution.url }}" />
         </a>
         <p>{{result.user.username}}</p>
-        <hr>
+        <hr class="bar">
       </div>
     </div>
   </div>

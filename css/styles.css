@@ -1,6 +1,25 @@
+@media only screen and (min-width: 400px) and (max-width: 670px) {
+  .box {
+    padding: 1em 1em;
+  }
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .bar {
+    width: 3em;
+  }
+  body {
+    max-width: 40em;
+
+  }
+}
+
 body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 5em;
-  padding-bottom: 5em;
   text-align: center;
 }
 
@@ -10,16 +29,14 @@ p {
 
 hr {
   color: lightgray;
+  width: 10em;
 }
 
-#box {
-  padding: 2em;
-  margin-top: 2em;
-  margin-bottom: 2em;
+.box {
+  padding: 2em 1em;
+  margin: 2em 1em;
   border: 1px dashed lightgray;
-  max-width: 20em;
-  margin-left: auto;
-  margin-right: auto;
+  float: left;
 }
 
 /* ngAnimate */

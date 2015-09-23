@@ -10,7 +10,7 @@ angular.module('instaApp', ['ngAnimate', 'ngMessages'])
     var url = "https://api.instagram.com/v1/tags/{tag-name}/media/recent";
     var request = {
       client_id: "f716627148d7477890ca3e35d2ce5d26",
-      count: 10,
+      count: 30,
       callback: "JSON_CALLBACK"
     };
 
