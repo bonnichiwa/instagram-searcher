@@ -1,13 +1,11 @@
 angular.module('instaApp', ['ngAnimate', 'ngMessages'])
 
+
   .controller('instaCtrl', function($scope, $http) {
 
-  $scope.tagResults = false;
-  $scope.imageResults = false;
+    $scope.searchComplete = false;
 
   $scope.searchItem = function(tag) {
-    $scope.tagResults = true;
-    $scope.imageResults = true;
     
     var url = "https://api.instagram.com/v1/tags/{tag-name}/media/recent";
     var request = {
@@ -24,9 +22,10 @@ angular.module('instaApp', ['ngAnimate', 'ngMessages'])
     .then(function(response) {
       $scope.results = response.data.data;
       console.log(response.data);
+      $scope.searchComplete = true;
     },
     function(error) {
-      alert('error');
-    });
+      alert('Error: unable to retrieve images from Instagram');
+    })
   };
 });
