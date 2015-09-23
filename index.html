@@ -19,13 +19,16 @@
   <div class="search-bar">
     <form ng-submit="searchItem(tag)">
       <input type="text" id="tagSearch" name="tag" ng-model="tag" placeholder="Enter a tag to search" required />
-      <input type="submit" id="submit" value="Submit" />
+      <input type="submit" id="submit" value="Submit" ng-click="tagResults = !tagResults" />
     </form>
   </div>
 
   <div class="search-results">
-    <ul ng-repeat="result in results">
-      <li> {{result}} </li>
+    <p ng-if="tagResults">Amount of results: {{results.data.length}} for <em>"{{tag}}"</em></p>
+    <ul>
+      <li >
+        <img ng-src="{{ results.data[0].images.standard_resolution.url }}" />
+      </li>
     </ul>
   </div>
 </body>
